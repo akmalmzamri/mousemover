@@ -7,7 +7,7 @@ Mouse movement simulator
 Mouse Mover is a Python application that can be used to simulate cursor movement. This project is heavily inspired by the infamous [Mouse Jiggler](https://mouse-jiggler.en.uptodown.com/windows) application. One of the main purposes of using this application is to prevent screen saver or auto-lock in the case where you can't disable them.
 
 ## Download  
-Download the executable for Windows [HERE](https://sourceforge.net/projects/python-mouse-mover/) or compile the program yourself by following the guide below.
+Download the executable for Windows from [Sourceforge](https://sourceforge.net/projects/python-mouse-mover/) or compile the program yourself by following the guide below.
   
   
 ## Dependencies Installation
