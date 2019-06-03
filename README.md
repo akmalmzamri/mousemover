@@ -1,6 +1,6 @@
 # Mouse Mover
 
-Mouse movement simulator
+Mouse movement simulator  
 Executable download - [Windows](https://sourceforge.net/projects/python-mouse-mover/)
 
 ![alt text](https://i.imgur.com/NRVNYZA.png)  
