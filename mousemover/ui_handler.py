@@ -1,8 +1,6 @@
 from mouse_handler import Mouse_Handler
-from PyQt5 import QtCore, QtWidgets, QtGui
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
+from PyQt5.QtWidgets import QSystemTrayIcon, QAction, qApp, QMenu
+from PyQt5.QtGui import QIcon
 
 class UI_Input:
     def __init__(self, config):
@@ -33,7 +31,7 @@ class UI_Handler:
         self.MainWindow = MainWindow
         self.MainWindow.closeEvent = self.closeEvent
         self.tray_icon = QSystemTrayIcon(self.MainWindow)
-        self.tray_icon.setIcon(QtGui.QIcon('resource/256x256.png'))
+        self.tray_icon.setIcon(QIcon('resource/256x256.png'))
         show_action = QAction("Restore", self.MainWindow)
         quit_action = QAction("Exit", self.MainWindow)
         show_action.triggered.connect(self.MainWindow.show)

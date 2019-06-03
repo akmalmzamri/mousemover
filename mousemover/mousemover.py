@@ -3,11 +3,6 @@ import sys
 import time
 import yaml
 
-from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-
 from ui_mainwindow import *
 from ui_handler import UI_Handler
     
