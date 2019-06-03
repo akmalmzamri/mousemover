@@ -1,0 +1,8 @@
+icon_path: resource/256x256.png
+mouse_movement:
+    delay: 1
+    offset: 200
+    min_random_movement: 100
+    max_random_movement: 400
+    min_random_delay: 0
+    max_random_delay: 10

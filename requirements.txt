@@ -1,0 +1,4 @@
+pywin32==224
+PyQt5==5.11.3
+pyqt5-tools==5.11.3.1.4
+PyYAML==5.1
