@@ -2,6 +2,7 @@ from mouse_handler import Mouse_Handler
 from PyQt5.QtWidgets import QSystemTrayIcon, QAction, qApp, QMenu
 from PyQt5.QtGui import QIcon
 
+
 class UI_Input:
     def __init__(self, config):
         # Construct UI input object to be pass to mouse_handler
@@ -9,15 +10,21 @@ class UI_Input:
         self.offset = config["mouse_movement"]["offset"]
         self.random_movement_enabled = False
         self.random_delay_enabled = False
-        self.random_movement = [config["mouse_movement"]["min_random_movement"], config["mouse_movement"]["max_random_movement"]]
-        self.random_delay = [config["mouse_movement"]["min_random_delay"], config["mouse_movement"]["max_random_delay"]]
+        self.random_movement = [
+            config["mouse_movement"]["min_random_movement"],
+            config["mouse_movement"]["max_random_movement"]
+        ]
+        self.random_delay = [
+            config["mouse_movement"]["min_random_delay"],
+            config["mouse_movement"]["max_random_delay"]
+        ]
         self.timer_enabled = False
         self.timer_Hour = 0
         self.timer_Minute = 0
         self.timer_Second = 0
 
-class UI_Handler:
 
+class UI_Handler:
     def __init__(self, ui, MainWindow, config):
         # Initialize input value
         self.ui = ui
@@ -58,16 +65,16 @@ class UI_Handler:
             self.ui.timerMinute.setEnabled(False)
             self.ui.timerSecond.setEnabled(False)
 
-        self.ui_input.timer_enabled  = self.timer_enabled
-    
+        self.ui_input.timer_enabled = self.timer_enabled
+
     def enable_random_movement(self, element):
         # Enable random movement
         if element.isChecked():
             self.random_movement_enabled = True
         else:
             self.random_movement_enabled = False
-        
-        self.ui_input.random_movement_enabled  = self.random_movement_enabled
+
+        self.ui_input.random_movement_enabled = self.random_movement_enabled
 
     def enable_random_delay(self, element):
         # Enable random delay interval between each movement
@@ -76,10 +83,10 @@ class UI_Handler:
         else:
             self.random_delay_enabled = False
         
-        self.ui_input.random_delay_enabled  = self.random_delay_enabled
+        self.ui_input.random_delay_enabled = self.random_delay_enabled
 
     def enable_tray_minimize(self, element):
-        # Enable the program to be minimize to system tray when user press close button
+        # Enable the program to be minimize to system tray
         if element.isChecked():
             self.tray_minimize_enabled = True
         else:
@@ -108,7 +115,8 @@ class UI_Handler:
     
     def start_timer(self):
         # Convert the timer inputs to seconds
-        total_time = (self.ui_input.timer_Hour * 60 * 60) + (self.ui_input.timer_Minute * 60) + (self.ui_input.timer_Second)
+        total_time = (self.ui_input.timer_Hour * 60 * 60) + \
+            (self.ui_input.timer_Minute * 60) + (self.ui_input.timer_Second)
         self.mouse_handler.start_timer(total_time, self)
     
     def enable_settings_input(self, state):
@@ -117,7 +125,7 @@ class UI_Handler:
         This will be call when the user press "Start" or "Stop" button
         """
         self.ui.timerEnabled.setEnabled(state)
-        if state == True:
+        if state is True:
             if self.ui.timerEnabled.isChecked():
                 self.ui.timerHour.setEnabled(True)
                 self.ui.timerMinute.setEnabled(True)

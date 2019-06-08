@@ -9,6 +9,7 @@ import win32con
 SCREEN_WIDTH = win32api.GetSystemMetrics(0)
 SCREEN_HEIGHT = win32api.GetSystemMetrics(1)
 
+
 class Mouse_Handler:
 
     def __init__(self):
@@ -22,9 +23,9 @@ class Mouse_Handler:
 
     def move_mouse(self, ui_input):
         """
-        Move mouse <offset> away relative to the current position every <delay> seconds.
-        65535 is used to normalize absolute coordinates so we can get the same mouse movement 
-        regardless of screen size (0,0) to (65535,65535)
+        Move mouse <offset> away relative to the current position every <delay>
+        seconds. 65535 is used to normalize absolute coordinates so we can get
+        the same movement regardless of screen size (0,0) to (65535,65535)
         """
 
         # Initialize movement configuration
@@ -65,19 +66,19 @@ class Mouse_Handler:
             # Perform the first movement
             x, y = win32api.GetCursorPos()
             win32api.mouse_event(
-                    win32con.MOUSEEVENTF_MOVE | win32con.MOUSEEVENTF_ABSOLUTE, 
-                    int((x / SCREEN_WIDTH * 65535.0) + (total_x_movement)),
-                    int((y / SCREEN_HEIGHT * 65535.0) + (total_y_movement))
-                )
+                win32con.MOUSEEVENTF_MOVE | win32con.MOUSEEVENTF_ABSOLUTE,
+                int((x / SCREEN_WIDTH * 65535.0) + (total_x_movement)),
+                int((y / SCREEN_HEIGHT * 65535.0) + (total_y_movement))
+            )
             self.movement_delay.wait(delay + random_delay_modifier)
             
             # Perform the second movement
             x, y = win32api.GetCursorPos()
             win32api.mouse_event(
-                    win32con.MOUSEEVENTF_MOVE | win32con.MOUSEEVENTF_ABSOLUTE, 
-                    int((x / SCREEN_WIDTH * 65535.0) - (total_x_movement)),
-                    int((y / SCREEN_HEIGHT * 65535.0) - (total_y_movement))
-                )
+                win32con.MOUSEEVENTF_MOVE | win32con.MOUSEEVENTF_ABSOLUTE,
+                int((x / SCREEN_WIDTH * 65535.0) - (total_x_movement)),
+                int((y / SCREEN_HEIGHT * 65535.0) - (total_y_movement))
+            )
             self.movement_delay.wait(delay + random_delay_modifier)
     
     def start_mouse_movement(self, ui_input):

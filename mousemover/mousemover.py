@@ -9,7 +9,8 @@ from ui_handler import UI_Handler
 
 # Set HiDPI Scalling
 os.environ['QT_AUTO_SCREEN_SCALE_FACTOR'] = '1'
-    
+
+
 def main():
     # Display the UI
     MainWindow.show()
