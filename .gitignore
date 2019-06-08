@@ -2,5 +2,5 @@
 *.pyo
 *.vscode
 *__pycache__
-ui/command.tx
+ui/command.txt
 /venv/
