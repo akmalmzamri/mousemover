@@ -31,17 +31,23 @@ python mousemover.py
 | Random Delay Interval | Randomize the interval between the movement. |
 | Close Button Minimize to Tray | When enabled, pressing the close button will minimize the application to system tray instead of closing it |
 
-# Preparing development environment
+## Preparing development environment
 
 1. Download and install Python for Windows (tested using Python 3.7.7)
 2. Using your favourite Git client, clone the repository to your development machine, eg. to `c:\projects\mousemover`
 3. Open `cmd` terminal to your project directory, eg. `c:\projects\mousemover`
 4. Create virtual environment with the command:
-   `pip -m venv venv`
+   ```
+   pip -m venv venv
+   ```
 5. Activate virtual environment with the command:
-   `venv\Scripts\activate.bat`
+   ```
+   venv\Scripts\activate.bat
+   ```
 6. Install dependencies with the command:
-   `pip install -r requirements.txt`
+   ```
+   pip install -r requirements.txt
+   ```
 7. Test that you can run `mousemover` with the command:
    ```
    cd mousemover
