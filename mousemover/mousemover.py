@@ -10,6 +10,11 @@ from ui_handler import UI_Handler
 # Set HiDPI Scalling
 os.environ['QT_AUTO_SCREEN_SCALE_FACTOR'] = '1'
 
+# get the bundle location and file path
+def get_file_path(filename):
+	bundle_dir = getattr(sys, '_MEIPASS', os.path.abspath(os.path.dirname(__file__)))
+	path_to_file = os.path.abspath(os.path.join(bundle_dir, filename))
+	return path_to_file
 
 def main():
     # Display the UI
@@ -24,14 +29,14 @@ if __name__ == "__main__":
     ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
     # Load config
-    with open("config.yml", 'r') as stream:
+    with open(get_file_path('config.yml'), 'r') as stream:
         try:
             config = yaml.safe_load(stream)
         except yaml.YAMLError as exc:
             print(exc)
 
     # Initialized UI
-    app_icon = config["icon_path"]
+    app_icon = get_file_path(config["icon_path"])
     app = QtWidgets.QApplication(sys.argv)
     app.setWindowIcon(QtGui.QIcon(app_icon))
 
