@@ -61,7 +61,7 @@ PyInstaller should be installed in your virtual environment folder when you exec
 Execute the following command in the `mousemover` folder to compile to a standalone Windows executable 
 
 ```bash
-pyinstaller --clean --onefile --add-data "config.yml;." --add-data ".\resource;resource" mousemover.py
+pyinstaller --clean --onefile --add-data "config.yml;." --add-data ".\resource;resource" --icon .\resource\icon.ico --windowed mousemover.py
 ```
 
 The executable will be available in the `dist` folder
